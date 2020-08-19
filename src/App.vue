@@ -3,10 +3,10 @@
     <div id="nav">
       <router-link to="/">首頁</router-link>
       <router-link to="/about">流動塑像</router-link>
-      <router-link to="/about">一對對</router-link>
-      <router-link to="/about">一頁頁</router-link>
-      <router-link to="/about">四元素</router-link>
-      <router-link to="/about">自由呈現</router-link>
+      <router-link to="/one_to_one">一對對</router-link>
+      <router-link to="/pages">一頁頁</router-link>
+      <router-link to="/4elems">四元素</router-link>
+      <router-link to="/free">自由呈現</router-link>
     </div>
     <router-view/>
   </div>
