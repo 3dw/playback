@@ -1,0 +1,333 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass-mixins";
+
+$primary-color: hsla(0,45%,50%,1);
+
+$step-one: 33px;
+$step-two: 66px;
+$step-three: 100px;
+
+
+
+@mixin keyFrames($animation-name) {
+  @-webkit-keyframes #{$animation-name} {   @content; }
+  @-moz-keyframes #{$animation-name} {  @content; }
+  @keyframes #{$animation-name} {  @content; }
+}
+
+
+@include keyFrames(shiftingStatue) {
+  0% { top:0px }
+  20% { top:$step-one; }
+  33% { top:$step-one; }
+  53% { top:$step-two; }
+  66% { top:$step-two; }
+  87% { top:$step-three; }
+  100% { top:$step-three; }
+}
+
+
+@include keyFrames(backToBackS) {
+  0% { @include transform(rotate(0deg)) }
+  100% { @include transform(rotate(360deg))  }
+}
+
+@include keyFrames(handToHandS) {
+  0% { @include transform(translateX(0px)) }
+  10% { @include transform(translateX(-15px)) }
+  20% { @include transform(translateX(-30px)) }
+  30% { @include transform(translateX(-30px)) }
+  40% { @include transform(translateX(-45px)) }
+  50% { @include transform(translateX(-45px)) }
+  60% { @include transform(translateX(-30px)) }
+  70% { @include transform(translateX(-30px)) }
+  80% { @include transform(translateX(-15px)) }
+  90% { @include transform(translateX(-15px)) }
+  100% { @include transform(translateX(0px))  }
+}
+
+@include keyFrames(speakBTB) {
+  0% { @include transform(scale(1)) }
+  20% { @include transform(scale(1.2));
+      background-color: $primary-color; }
+  33% { @include transform(scale(1)) }
+  53% { @include transform(scale(1.2));
+        background-color: $primary-color; }
+  66% { @include transform(scale(1)) }
+  87% { @include transform(scale(1.2));
+        background-color: $primary-color;}
+  100% { @include transform(scale(1)) }
+}
+
+@include keyFrames(speakHTH) {
+  0% { @include transform(scale(1)) }
+  20% { @include transform(scale(1.2));
+      background-color: $primary-color; }
+  33% { @include transform(scale(1)) }
+  53% { @include transform(scale(1.2));
+        background-color: $primary-color; }
+  66% { @include transform(scale(1)) }
+  87% { @include transform(scale(1.2));
+        background-color: $primary-color;}
+  100% { @include transform(scale(1)) }
+}
+
+@include keyFrames(speakFTF2) {
+  0% { @include transform(translateX(0px)) }
+  10% { @include transform(translateX(15px)) }
+  15% { @include transform(translateX(15px)) }
+  20% { @include transform(translateX(30px)) }
+  25% { @include transform(translateX(30px)) }
+  30% { @include transform(translateX(45px)) }
+  33% { @include transform(translateX(45px)) }
+  43% { @include transform(translateX(60px)) }
+  48% { @include transform(translateX(60px)) }
+  53% { @include transform(translateX(75px)) }
+  58% { @include transform(translateX(75px)) }
+  63% { @include transform(translateX(90px)) }
+  66% { @include transform(translateX(90px)) }
+  76% { @include transform(translateX(105px)) }
+  81% { @include transform(translateX(105px)) }
+  86% { @include transform(translateX(130px)) }
+  91% { @include transform(translateX(130px)) }
+  96% { @include transform(translateX(145px)) }
+  100% { @include transform(translateX(145px)) }
+}
+
+@include keyFrames(speakFTF1) {
+  0% { @include transform(translateX(0px)) }
+  10% { @include transform(translateX(-15px)) }
+  15% { @include transform(translateX(-15px)) }
+  20% { @include transform(translateX(-30px)) }
+  25% { @include transform(translateX(-30px)) }
+  30% { @include transform(translateX(-45px)) }
+  33% { @include transform(translateX(-45px)) }
+  43% { @include transform(translateX(-60px)) }
+  48% { @include transform(translateX(-60px)) }
+  53% { @include transform(translateX(-75px)) }
+  58% { @include transform(translateX(-75px)) }
+  63% { @include transform(translateX(-90px)) }
+  66% { @include transform(translateX(-90px)) }
+  76% { @include transform(translateX(-105px)) }
+  81% { @include transform(translateX(-105px)) }
+  86% { @include transform(translateX(-130px)) }
+  91% { @include transform(translateX(-130px)) }
+  96% { @include transform(translateX(-145px)) }
+  100% { @include transform(translateX(-145px)) }
+}
+
+@include keyFrames(speak) { 
+  0% { @include transform(scale(1)) }
+  20% { @include transform(scale(1.2));
+      background-color: $primary-color; }
+  33% { @include transform(scale(1)) }
+  66% { @include transform(scale(1)) }
+  87% { @include transform(scale(1.2));
+        background-color: $primary-color;}
+  100% { @include transform(scale(1)) }
+}
+
+
+@include keyFrames(murmur) { 
+  0% { background-color: transparent; left: 0px; }
+  50% { background-color: lighten($primary-color, 35%); left: 5px; }
+  100% { background-color: transparent; left: 0px; }
+}
+
+
+
+/* 塑像 */
+.stage:hover .shiftingStatue, .stage:active .shiftingStatue {
+  animation: shiftingStatue 3s ease forwards 1, speak 3s ease forwards 1;
+}
+
+
+.stage:hover .rollingStatue, .stage:active .rollingStatue {
+  animation: shiftingStatue 3s ease forwards 1,
+    speak 3s ease forwards 1,
+    murmur 2.5s ease forwards 6;
+}
+
+
+/* ~塑像 */
+
+/* 一對對 */
+
+.stage.backToBack > section, .stage.handToHand > section {
+  display:block;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  left:50%;
+  margin-left: -150px;
+}
+
+.stage.backToBack:hover > section,.stage.backToBack:active > section {
+  animation: backToBackS 3s linear 3;
+}
+
+.stage.backToBack:hover > section > #f2, .stage.backToBack:active > section > #f2 {
+  animation: speakBTB 3s linear 3;
+  animation-delay: 1.5s;
+
+}
+
+.stage.backToBack:hover > section > #f1, .stage.backToBack:active > section >#f1 {
+  animation: speakBTB 3s linear 3;
+  animation-delay: 3s;
+}
+
+
+.stage.backToBack > section > #f1 {
+  position: absolute;
+  bottom:0px;
+  left:50%;
+  margin-left: -25px;
+}
+
+.stage.backToBack > section > #f2 {
+  position: absolute;
+  top:0px;
+  left:50%;
+  margin-left: -25px;
+}
+
+.stage.handToHand:hover > section, .stage.handToHand:active > section {
+  animation: handToHandS 3s linear 3;
+}
+
+.stage.handToHand:hover > section > #f2, .stage.handToHand:active > section > #f2 {
+  animation: speakHTH 3s linear 3;
+
+}
+
+.stage.handToHand:hover > section > #f1, .stage.handToHand:active > section >#f1 {
+  animation: speakHTH 3s linear 3;
+  animation-delay: 1.5s;
+}
+
+.stage.faceToFace:hover > section > #f2, .stage.faceToFace:active > section > #f2 {
+  animation: speakFTF2 9s forwards 1;
+}
+
+.stage.faceToFace:hover > section > #f1, .stage.faceToFace:active > section >#f1 {
+  animation: speakFTF1 9s forwards 1;
+  animation-delay: 3s;
+}
+
+.stage.downToUp:hover > section > #f1, .stage.downToUp:active > section > #f1 {
+  animation: speak 3s ease forwards 3;
+  animation-delay: 1.5s;
+}
+
+.stage.downToUp:hover > section > #f2, .stage.downToUp:active > section > #f2 {
+  animation: speak 3s ease forwards 3;
+}
+
+/* ~一對對 */
+
+
+#a {}
+#b {
+  animation-delay: 4s;
+}
+#c {
+  animation-delay: 8s;
+}
+
+#d {
+  animation-delay:12s;
+}
+
+#e {
+  animation-delay:16s;
+}
+
+#f1{
+}
+
+.token {
+  display: inline-block;
+  position: relative;
+  margin: 50px;
+  width: 50px;  
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+@media screen and (max-width: 600px) {
+  .token {
+    margin: 10px;
+  }
+}
+
+.token:before {
+  position: relative;
+  left: 50%;
+  margin-left: -8px;
+  top: 87%;
+  content: "";
+  display: inline-block;
+  border-top: 8px solid black; 
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+}
+
+.token#f2:before {
+  top: -29%;
+  border-bottom: 8px solid black; 
+  border-top: 8px solid transparent;
+}
+
+.stage.handToHand > section > #f2:before {
+  top: 101%;
+  border-top: 8px solid black; 
+  border-bottom: 8px solid transparent; 
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+}
+
+.stage.faceToFace > section > #f1 {
+  position: relative;
+  left: 150px;
+}
+
+.stage.faceToFace > section > #f1:before {
+  top: 39%;
+  left: -7px;
+  border-top: 8px solid transparent; 
+  border-bottom: 8px solid transparent; 
+  border-left: 8px solid transparent;
+  border-right: 8px solid black;
+}
+
+.stage.faceToFace > section > #f2:before {
+  top: 39%;
+  left: 57px;
+  border-top: 8px solid transparent; 
+  border-bottom: 8px solid transparent; 
+  border-left: 8px solid black;
+  border-right: 8px solid transparent;
+}
+
+.stage.downToUp > section > #f2:before {
+  top: 101%;
+  display: inline-block;
+  border-top: 8px solid black; 
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+}
+
+.stage.downToUp > section > #f2 {
+  position: relative;
+  top: 60px;
+  left: 78px;
+}
+
+
