@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
     <h1>{{msg}}</h1>
+    <h3>歡迎來到playback劇場!!</h3>
+    <router-link class="ui green button" to="/about">請從流動塑像開始</router-link>
   </div>
 </template>
 

@@ -1,12 +1,50 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">首頁</router-link>
-      <router-link to="/about">流動塑像</router-link>
-      <router-link to="/one_to_one">一對對</router-link>
-      <router-link to="/pages">一頁頁</router-link>
-      <router-link to="/4elems">四元素</router-link>
-      <router-link to="/free">自由呈現</router-link>
+    <div class="ui menu thin-only">
+      <router-link class = "item" to="/">
+        <i class="home icon"></i>
+      </router-link>
+      <router-link class = "item" to="/about">
+        <i class="redo icon"></i>
+        </router-link>
+      <router-link class = "item" to="/one_to_one">
+        <i class="sync icon"></i>
+        </router-link>
+      <router-link class = "item" to="/pages">
+        <i class="book icon"></i>
+        </router-link>
+      <router-link class = "item" to="/4elems">
+        <i class="music icon"></i>
+        </router-link>
+      <router-link class = "item" to="/free">
+        <i class="birthday cake icon"></i>
+      </router-link>
+    </div>
+    <div class="ui labeled icon menu fat-only">
+      <router-link class = "item" to="/">
+        <i class="home icon"></i>
+        首頁
+      </router-link>
+      <router-link class = "item" to="/about">
+        <i class="redo icon"></i>
+        流動塑像
+      </router-link>
+      <router-link class = "item" to="/one_to_one">
+        <i class="sync icon"></i>
+        一對對
+      </router-link>
+      <router-link class = "item" to="/pages">
+        <i class="book icon"></i>
+        一頁頁
+      </router-link>
+      <router-link class = "item" to="/4elems">
+        <i class="music icon"></i>
+        四元素
+      </router-link>
+      <router-link class = "item" to="/free">
+        <i class="birthday cake icon"></i>
+        自由呈現
+      </router-link>
     </div>
     <router-view/>
   </div>
@@ -17,6 +55,18 @@
 @import "./sass/playback.scss";
 @import "./sass/animation.scss";
 
+@media (max-width: 600px) {
+  .fat-only {
+    display: none !important;
+  }
+}
+
+@media (min-width: 601px) {
+  .thin-only {
+    display: none !important;
+  }
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -25,18 +75,18 @@
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+.item.router-link-exact-active {
+  background-color: #ccf !important;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    padding: 0 5px;
-    border-left: 1px solid black;
+html, body{
+  padding: 0;
+  margin: 0;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+p {
+  text-align: left;
+  white-space: pre-line;
+  padding: 0 1em;
 }
 </style>

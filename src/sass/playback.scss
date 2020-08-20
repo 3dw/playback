@@ -26,19 +26,7 @@ body {
 }
 
 h1 {
-  font-size: $p-size * 2;
-  margin-left: $p-size * 6;
-  &:hover, &:active {
-    margin-top: $p-size * 8;  
-  }
-  &#title {
-    font-family: $heading-font;
-    position:fixed;
-    top: $p-size * 10;
-    right: $p-size *2;
-    width:  $p-size *2;
-    font-size: $p-size * 3;
-  }
+  font-family: $heading-font;
 }
 
 
@@ -46,36 +34,12 @@ h1 {
   padding: 25px;
 }
 
-p {
-  font-size: $p-size;
-  line-height: 160%;
-  width: 50%;
-  margin: 100px;
-  font-family: SimHei, Apple LiGothic Medium, sans-serif;
-
-  &:hover, &:active {
-    font-size: $p-size * 1.5;  
-  }
-
-  &:before {
-    content: "";
-    display: inline-block;
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    background-color: adjust-hue(lighten($primary-color, 45%), -30%);  
-  }
-}
-
-
 .stage {
   background-color: adjust-hue(lighten($primary-color, 45%), -30%);
   z-index:-1;
-  height: 66%;
-  width: 100%;
-  position:absolute;
-  bottom:0px;
-  left:0px;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
 }
 
 #source {

@@ -11,23 +11,10 @@ $step-one: 33px;
 $step-two: 66px;
 $step-three: 100px;
 
-
-
 @mixin keyFrames($animation-name) {
   @-webkit-keyframes #{$animation-name} {   @content; }
   @-moz-keyframes #{$animation-name} {  @content; }
   @keyframes #{$animation-name} {  @content; }
-}
-
-
-@include keyFrames(shiftingStatue) {
-  0% { top:0px }
-  20% { top:$step-one; }
-  33% { top:$step-one; }
-  53% { top:$step-two; }
-  66% { top:$step-two; }
-  87% { top:$step-three; }
-  100% { top:$step-three; }
 }
 
 
@@ -138,22 +125,6 @@ $step-three: 100px;
   100% { background-color: transparent; left: 0px; }
 }
 
-
-
-/* 塑像 */
-.stage:hover .shiftingStatue, .stage:active .shiftingStatue {
-  animation: shiftingStatue 3s ease forwards 1, speak 3s ease forwards 1;
-}
-
-
-.stage:hover .rollingStatue, .stage:active .rollingStatue {
-  animation: shiftingStatue 3s ease forwards 1,
-    speak 3s ease forwards 1,
-    murmur 2.5s ease forwards 6;
-}
-
-
-/* ~塑像 */
 
 /* 一對對 */
 
