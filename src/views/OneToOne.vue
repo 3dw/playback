@@ -11,7 +11,10 @@
     <p v-if ="myF.g">
         呈現{{myF.g}}
     </p>
-    <div class="ui vertical buttons">
+    <div class="ui vertical buttons thin-only">
+        <a class="ui green button" v-for = "f in forms" :key="f.n" @click = "myF = f" :class = "{active: myF.css == f.css}">{{f.n}}</a>
+    </div>
+    <div class="ui buttons fat-only">
         <a class="ui green button" v-for = "f in forms" :key="f.n" @click = "myF = f" :class = "{active: myF.css == f.css}">{{f.n}}</a>
     </div>
     <section class = "stage">
@@ -130,6 +133,14 @@ $primary-color: hsla(0,45%,50%,1);
     animation: backToBackS 3s linear forwards 3;
 }
 
+@media (min-width: 601px) {
+  #backToBack {
+    width: 300px;
+    height: 250px;
+    animation: backToBackS 3s linear forwards 3;
+  }
+}
+
 #b1 {
     position: absolute;
     top: 0;
@@ -175,6 +186,14 @@ $primary-color: hsla(0,45%,50%,1);
     width: 300px;
     height: 150px;
     animation: handToHandS 3s linear forwards 3;
+}
+
+@media (min-width: 601px) {
+  #handToHand {
+    width: 600px;
+    height: 400px;
+    animation: handToHandS 3s linear forwards 3;
+  }
 }
 
 #h1 {
