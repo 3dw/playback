@@ -34,7 +34,7 @@
 <script type="text/javascript">
     
 export default {
-  name: 'Home',
+  name: 'OneToOne',
   data () {
     return {
       myF:  {n: '起點', css: ''},

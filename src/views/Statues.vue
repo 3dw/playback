@@ -23,7 +23,7 @@
 <script type="text/javascript">
     
 export default {
-  name: 'Home',
+  name: 'Statues',
   data () {
     return {
       myF:  {n: '起點', css: ''},
@@ -50,6 +50,7 @@ export default {
 $step-one: 33px;
 $step-two: 66px;
 $step-three: 100px;
+$primary-color: hsla(0,45%,50%,1);
 
 .statue {
   display: inline-block;
@@ -85,7 +86,6 @@ $step-three: 100px;
   @keyframes #{$animation-name} {  @content; }
 }
 
-
 @include keyFrames(shiftingStatue) {
   0% { top:0px }
   20% { top:$step-one; }
@@ -96,6 +96,16 @@ $step-three: 100px;
   100% { top:$step-three; }
 }
 
+@include keyFrames(speak) { 
+  0% { transform: scale(1) }
+  20% { transform: scale(1.2) ;
+      background-color: $primary-color; }
+  33% { transform: scale(1) }
+  66% { transform: scale(1) }
+  87% { transform: scale(1.2) ;
+        background-color: $primary-color;}
+  100% { transform: scale(1) }
+}
 
 /* 塑像 */
 .shiftingStatue {
