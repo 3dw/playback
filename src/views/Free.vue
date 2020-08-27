@@ -1,9 +1,8 @@
 <template>
   <div class="about">
     <h1>
-        <span class = "fat-only">四元素
+        <span class = "fat-only">自由呈現
         </span>
-        <span v-if = "myF.n">{{myF.n}}</span>
     </h1>
     <p v-if ="myF.d">
         {{myF.d}}

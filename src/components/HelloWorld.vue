@@ -23,7 +23,7 @@ h1 {
   color: orange;
   height: 100vh;
   padding-top: 2em;
-  background: url(/og-image.jpg) no-repeat center center fixed; 
+  background: url(https://3dw.github.io/playback/og-image.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

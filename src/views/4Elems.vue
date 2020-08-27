@@ -3,7 +3,6 @@
     <h1>
         <span class = "fat-only">四元素
         </span>
-        <span v-if = "myF.n">{{myF.n}}</span>
     </h1>
     <p v-if ="myF.d">
         {{myF.d}}
