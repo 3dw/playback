@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <div class="ui menu thin-only">
-      <router-link class = "item" to="/">
+      <!-- <router-link class = "item" to="/">
         <i class="home icon"></i>
-      </router-link>
+      </router-link> -->
       <router-link class = "item" to="/about">
-        <i class="redo icon"></i>
+        <i class="user icon"></i>
         </router-link>
       <router-link class = "item" to="/one_to_one">
         <i class="sync icon"></i>
@@ -26,7 +26,7 @@
         首頁
       </router-link>
       <router-link class = "item" to="/about">
-        <i class="redo icon"></i>
+        <i class="user icon"></i>
         流動塑像
       </router-link>
       <router-link class = "item" to="/one_to_one">
@@ -55,6 +55,11 @@
 @import "./sass/playback.scss";
 @import "./sass/animation.scss";
 
+.ui.menu {
+  margin: 0 !important;
+  width: 100vw;
+}
+
 @media (max-width: 600px) {
   .fat-only {
     display: none !important;
@@ -79,7 +84,7 @@
   background-color: #ccf !important;
 }
 
-html, body{
+html, body {
   padding: 0;
   margin: 0;
 }

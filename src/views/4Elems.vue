@@ -16,7 +16,7 @@
 <script type="text/javascript">
     
 export default {
-  name: '4Elems',
+  name: 'ElemsElems',
   data () {
     return {
       myF:  {n:'四元素', c:'四元素',

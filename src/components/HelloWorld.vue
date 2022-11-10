@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
-    <h1>歡迎來到playback劇場!!</h1>
+    <h1><span class="fat-only">歡迎來到</span>
+      playback劇場!!</h1>
     <router-link class="ui huge green button" to="/about">請從流動塑像開始</router-link>
   </div>
 </template>
